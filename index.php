@@ -6,11 +6,14 @@ error_reporting(E_ALL);
 <head>
     <meta charset="UTF-8">
     <title>Lesson_3</title>
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+<div class="container">
+    <div class="col-md-12">
 <h1>Урок 3. Циклы и массивы</h1>
 <?php
-echo "<h2>Задание 1</h2>";
+echo "<pre><h2>Задание 1</h2></pre>";
 $i=0;
 $n=100;
 echo "числа в промежутке от 0 до 100, которые делятся на 3 без остатка:"."<br>";
@@ -28,7 +31,7 @@ while ($i<=$n)
     }
     $i++;
 }
-echo "<h2>Задание 2</h2>";
+echo "<pre><h2>Задание 2</h2></pre>";
 $i=0;
 $n=10;
 $odd_or_even="это ноль";
@@ -44,9 +47,9 @@ do
         $odd_or_even="это нечетное число";
     }
 } while ($i<=$n);
-echo "<h2>Задание 3</h2>";
+echo "<pre><h2>Задание 3</h2></pre>";
 for ($i = 0; $i < 10; print "$i ", $i++);
-echo "<h2>Задание 4</h2>";
+echo "<pre><h2>Задание 4</h2></pre>";
 $Russia=[
     "Красноярский край" => ["Красноярск","Норильск","Оймякон","Шарыпово"],
     "Новосибирская область" => ["Новосибирск","Толмачево","Черепаново"],
@@ -68,7 +71,7 @@ foreach ($Russia as $region => $cities)
     }
     if (!$first) echo ".";
 }
-echo "<h2>Задание 5</h2>";
+echo "<pre><h2>Задание 5</h2></pre>";
 $Russia=[
     "Красноярский край" => ["Красноярск","Норильск","Оймякон","Шарыпово","Козулька"],
     "Новосибирская область" => ["Новосибирск","Толмачево","Черепаново"],
@@ -93,7 +96,7 @@ foreach ($Russia as $region => $cities)
     }
     if (!$first) echo ".";
 }
-echo "<h2>Задание 6</h2>";
+echo "<pre><h2>Задание 6</h2></pre>";
 mb_internal_encoding('UTF-8');
 mb_regex_encoding('UTF-8');
 $alphabet=['а'=>'a','б'=>'b','в'=>'v','г'=>'g','д'=>'d','е'=>'e','ё'=>'jo','ж'=>'zh','з'=>'z','и'=>'i','й'=>'j',
@@ -118,8 +121,8 @@ function translit ($string, $alphabet )
     return $enString;                                          //В результате выводим итоговую строку
 }
 $Example="Пример Произвольного Заголовка^___^!";
-echo translit($Example, $alphabet);
-echo "<h2>Задание 7</h2>";
+echo "<p>".translit($Example, $alphabet)."</p>";
+echo "<pre><h2>Задание 7</h2></pre>";
 echo "<h3>Вариант 1</h3>";
 function change_space ($string)
 {
@@ -146,8 +149,8 @@ function change_space_2 ($string)
     return $FinishString;
 }
 
-echo change_space_2($Example);
-echo "<h2>Задание 8</h2>";
+echo "<p>".change_space_2($Example)."</p>";
+echo "<pre><h2>Задание 8</h2></pre>";
 function translit_and_change ($string, $alphabet )
 {
     $n=mb_strlen($string);
@@ -173,7 +176,9 @@ function translit_and_change ($string, $alphabet )
     $FinishString=implode('',$enSymbol );
     return $FinishString;
 }
-echo translit_and_change($Example, $alphabet);
+echo "<p>".translit_and_change($Example, $alphabet)."</p>";
 ?>
+    </div>
+</div>
 </body>
 </html>
