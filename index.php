@@ -145,7 +145,7 @@ echo change_space($Example);
 echo "<h3>Вариант 2</h3>";
 function change_space_2 ($string)
 {
-    $FinishString=mb_ereg_replace(" ","_" , $string);
+    $FinishString=str_replace(" ","_" , $string);
     return $FinishString;
 }
 
